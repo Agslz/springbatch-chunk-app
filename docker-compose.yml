@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db-api-rest:
+    container_name: db-spring-batch-chunks
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: db-spring-batch-chunks
+      MYSQL_USER: ags
+      MYSQL_PASSWORD: root123
+      MYSQL_ROOT_PASSWORD: root123
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
