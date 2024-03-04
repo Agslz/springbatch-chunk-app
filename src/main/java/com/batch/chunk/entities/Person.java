@@ -23,7 +23,7 @@ public class Person implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    private Integer age;
+    private String age;
 
     private String createAt;
 

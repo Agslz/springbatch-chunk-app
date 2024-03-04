@@ -17,9 +17,29 @@ import java.util.Date;
 @SpringBootApplication
 public class SpringBatchChunkApplication {
 
+    @Autowired
+    private JobLauncher jobLauncher;
+
+    @Autowired
+    private Job job;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBatchChunkApplication.class, args);
+    }
+
+    @Bean
+    CommandLineRunner init() {
+
+        return args -> {
+            JobParameters jobParameters = new JobParametersBuilder()
+                    .addString("name", "chunk")
+                    .addLong("id", System.currentTimeMillis())
+                    .addDate("date", new Date())
+                    .toJobParameters();
+
+            jobLauncher.run(job,jobParameters);
+        };
+
     }
 
 
