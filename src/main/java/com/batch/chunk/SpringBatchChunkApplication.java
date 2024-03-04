@@ -18,10 +18,9 @@ import java.util.Date;
 public class SpringBatchChunkApplication {
 
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBatchChunkApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBatchChunkApplication.class, args);
+    }
 
 
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 
 @Data
@@ -21,8 +22,11 @@ public class Person implements Serializable {
 
     @Column(name = "last_name")
     private String lastName;
+
     private Integer age;
+
     private String createAt;
 
+    @Serial
     private static final long serialVersionUID = -3670843597762726141L;
 }
